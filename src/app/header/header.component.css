@@ -2,6 +2,8 @@ ul{
   display: flex;
   padding: 20px;
   width: 30%;
+  align-items: center;
+  justify-content: flex-end;
 }
 ul li{
   padding: 0px 10px;

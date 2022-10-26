@@ -3,13 +3,13 @@
     <a class="navbar-brand" routerLink="/">Blogify</a>
     <ul>
       <li>
-        <a routerLink="/my-articles">My Articles</a>
+        <a routerLink="/my-articles" *ngIf="isLoggedIn">My Articles</a>
       </li>
       <li>
-        <a routerLink="/add-article">Add Article</a>
+        <a routerLink="/add-article" *ngIf="isLoggedIn">Add Article</a>
       </li>
       <li>
-        <a routerLink="/profile">Profile</a>
+        <a routerLink="/profile" *ngIf="isLoggedIn">Profile</a>
       </li>
       <li>
         <a routerLink="/login" id="auth-btn">Login/Register</a>
