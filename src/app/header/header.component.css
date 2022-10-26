@@ -1,0 +1,13 @@
+ul{
+  display: flex;
+  padding: 20px;
+  width: 30%;
+}
+ul li{
+  padding: 0px 10px;
+}
+
+ul li a{
+  text-decoration: none;
+  font-weight: 500;
+}
