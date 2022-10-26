@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
+  public isLoggedIn: Boolean = false;
 
   constructor(private router: Router, private formBuilder: FormBuilder) { }
 
@@ -24,6 +25,22 @@ export class LoginComponent implements OnInit {
             "(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>\"'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}")
         ]]
     })
+  }
+
+  // getting form control names
+  get formControl(){
+    return this.loginForm.controls;
+  }
+
+  // login function
+  onLogin():void{
+    this.isLoggedIn = true;
+    // check if the form is valid
+    if(this.loginForm.valid){
+      console.log(this.loginForm.value);
+      localStorage.setItem("user-data", JSON.stringify(this.loginForm.value));
+      this.router.navigate(["/"]);
+    }
   }
 
 }
