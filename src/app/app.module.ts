@@ -20,7 +20,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddArticleComponent } from './articles/add-article/add-article.component';
 import { MyArticlesComponent } from './articles/my-articles/my-articles.component';
 import { ArticleDetailsComponent } from './articles/article-details/article-details.component';
-import { AuthServiceComponent } from './services/auth-service/auth-service.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { AuthServiceComponent } from './services/auth-service/auth-service.compo
     ProfileComponent,
     AddArticleComponent,
     MyArticlesComponent,
-    ArticleDetailsComponent,
-    AuthServiceComponent
+    ArticleDetailsComponent
   ],
   imports: [
     BrowserModule,
