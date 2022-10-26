@@ -12,7 +12,8 @@
         <a routerLink="/profile" *ngIf="isLoggedIn">Profile</a>
       </li>
       <li>
-        <a routerLink="/login" id="auth-btn">Login/Register</a>
+        <a routerLink="/login" id="auth-btn" *ngIf="!isLoggedIn">Login/Register</a>
+        <a routerLink="/login" id="auth-btn" *ngIf="isLoggedIn">Logout</a>
       </li>
     </ul>
   </div>
