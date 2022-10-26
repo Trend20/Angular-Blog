@@ -16,3 +16,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* global for styles */
+.action-btns{
+  display: flex;
+}
+
+#switch{
+  margin-left: 20px;
+}
