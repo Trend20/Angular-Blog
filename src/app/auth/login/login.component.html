@@ -1,15 +1,29 @@
 <div class="container mt-5">
   <h3>Login</h3>
   <hr>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" >
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email*</label>
       <input type="email" class="form-control" formControlName="email">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <div *ngIf="isLoggedIn && formControl.email.errors" class="text-danger mt-2">
+        <div *ngIf="formControl.email.errors.email">Email must be valid.</div>
+        <div *ngIf="formControl.email.errors.required">Email is required.</div>
+      </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password*</label>
       <input type="password" class="form-control" formControlName="password">
+      <div *ngIf="isLoggedIn&& formControl.password.errors" class="text-danger mt-2">
+        <div *ngIf="formControl.password.errors.required">Password is required.</div>
+        <div *ngIf="formControl.password.errors.pattern">
+          <ul>
+            <li>Password should be alphanumeric</li>
+            <li>A letter of the password should be capital</li>
+            <li>Password must contain a special character (@, $, !, &, etc)</li>
+            <li>Password length must be greater than 7 characters</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="action-btns">
       <button type="submit" class="btn btn-primary">Login</button>
