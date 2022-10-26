@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  appLogo:string = 'Blogify';
   public isLoggedIn: boolean = false;
 
   constructor(private router: Router, private authService: AuthService) { }
