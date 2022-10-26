@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit {
 
   // login function
   onLogin():void{
-    this.isLoggedIn = true;
     // check if the form is valid
     if(this.loginForm.valid){
       console.log(this.loginForm.value);
       localStorage.setItem("user-data", JSON.stringify(this.loginForm.value));
       this.router.navigate(["/"]);
+      this.isLoggedIn = true;
     }
   }
 
